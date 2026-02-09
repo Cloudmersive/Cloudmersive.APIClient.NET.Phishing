@@ -11,7 +11,7 @@ Name | Type | Description | Notes
 **HtmlBody** | **string** | Body of the email in HTML, or text | [optional] 
 **AllowLowReputationSenders** | **bool** | Allow email from low reputation senders and domains | [optional] 
 **AllowSanctioned** | **bool** | True to allow sanctioned countries and certain known sanctioned entities, false otherwise (default) | [optional] 
-**InputEmailFile** | **byte[]** |  | [optional] 
+**InputEmailFile** | **byte[]** | Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead. | [optional] 
 
 [[Back to Model list]](../README.md#documentation-for-models) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to README]](../README.md)
 

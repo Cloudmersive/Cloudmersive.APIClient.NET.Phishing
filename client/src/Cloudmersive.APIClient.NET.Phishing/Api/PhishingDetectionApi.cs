@@ -110,6 +110,26 @@ namespace Cloudmersive.APIClient.NET.Phishing.Api
         /// <param name="operationIndex">Index associated with the operation.</param>
         /// <returns>ApiResponse of PhishingDetectionAdvancedResponse</returns>
         ApiResponse<PhishingDetectionAdvancedResponse> PhishingDetectTextStringAdvancedPostWithHttpInfo(PhishingDetectionAdvancedRequest body = default(PhishingDetectionAdvancedRequest), int operationIndex = 0);
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PhishingDetectionUrlAdvancedResponse</returns>
+        PhishingDetectionUrlAdvancedResponse PhishingDetectUrlAdvancedPost(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0);
+
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PhishingDetectionUrlAdvancedResponse</returns>
+        ApiResponse<PhishingDetectionUrlAdvancedResponse> PhishingDetectUrlAdvancedPostWithHttpInfo(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0);
         #endregion Synchronous Operations
     }
 
@@ -223,6 +243,31 @@ namespace Cloudmersive.APIClient.NET.Phishing.Api
         /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
         /// <returns>Task of ApiResponse (PhishingDetectionAdvancedResponse)</returns>
         System.Threading.Tasks.Task<ApiResponse<PhishingDetectionAdvancedResponse>> PhishingDetectTextStringAdvancedPostWithHttpInfoAsync(PhishingDetectionAdvancedRequest body = default(PhishingDetectionAdvancedRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PhishingDetectionUrlAdvancedResponse</returns>
+        System.Threading.Tasks.Task<PhishingDetectionUrlAdvancedResponse> PhishingDetectUrlAdvancedPostAsync(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
+
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls.
+        /// </summary>
+        /// <remarks>
+        /// 
+        /// </remarks>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PhishingDetectionUrlAdvancedResponse)</returns>
+        System.Threading.Tasks.Task<ApiResponse<PhishingDetectionUrlAdvancedResponse>> PhishingDetectUrlAdvancedPostWithHttpInfoAsync(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken));
         #endregion Asynchronous Operations
     }
 
@@ -974,6 +1019,159 @@ namespace Cloudmersive.APIClient.NET.Phishing.Api
             if (this.ExceptionFactory != null)
             {
                 Exception _exception = this.ExceptionFactory("PhishingDetectTextStringAdvancedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls. 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>PhishingDetectionUrlAdvancedResponse</returns>
+        public PhishingDetectionUrlAdvancedResponse PhishingDetectUrlAdvancedPost(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0)
+        {
+            Cloudmersive.APIClient.NET.Phishing.Client.ApiResponse<PhishingDetectionUrlAdvancedResponse> localVarResponse = PhishingDetectUrlAdvancedPostWithHttpInfo(body);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls. 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <returns>ApiResponse of PhishingDetectionUrlAdvancedResponse</returns>
+        public Cloudmersive.APIClient.NET.Phishing.Client.ApiResponse<PhishingDetectionUrlAdvancedResponse> PhishingDetectUrlAdvancedPostWithHttpInfo(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0)
+        {
+            Cloudmersive.APIClient.NET.Phishing.Client.RequestOptions localVarRequestOptions = new Cloudmersive.APIClient.NET.Phishing.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json",
+                "text/json",
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Cloudmersive.APIClient.NET.Phishing.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            var localVarMultipartFormData = localVarContentType == "multipart/form-data";
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Cloudmersive.APIClient.NET.Phishing.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = body;
+
+            localVarRequestOptions.Operation = "PhishingDetectionApi.PhishingDetectUrlAdvancedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Apikey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Apikey", this.Configuration.GetApiKeyWithPrefix("Apikey"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = this.Client.Post<PhishingDetectionUrlAdvancedResponse>("/phishing/detect/url/advanced", localVarRequestOptions, this.Configuration);
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PhishingDetectUrlAdvancedPost", localVarResponse);
+                if (_exception != null)
+                {
+                    throw _exception;
+                }
+            }
+
+            return localVarResponse;
+        }
+
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls. 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of PhishingDetectionUrlAdvancedResponse</returns>
+        public async System.Threading.Tasks.Task<PhishingDetectionUrlAdvancedResponse> PhishingDetectUrlAdvancedPostAsync(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+            Cloudmersive.APIClient.NET.Phishing.Client.ApiResponse<PhishingDetectionUrlAdvancedResponse> localVarResponse = await PhishingDetectUrlAdvancedPostWithHttpInfoAsync(body, operationIndex, cancellationToken).ConfigureAwait(false);
+            return localVarResponse.Data;
+        }
+
+        /// <summary>
+        /// Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls. 
+        /// </summary>
+        /// <exception cref="Cloudmersive.APIClient.NET.Phishing.Client.ApiException">Thrown when fails to make API call</exception>
+        /// <param name="body">URL phishing detection request (optional)</param>
+        /// <param name="operationIndex">Index associated with the operation.</param>
+        /// <param name="cancellationToken">Cancellation Token to cancel the request.</param>
+        /// <returns>Task of ApiResponse (PhishingDetectionUrlAdvancedResponse)</returns>
+        public async System.Threading.Tasks.Task<Cloudmersive.APIClient.NET.Phishing.Client.ApiResponse<PhishingDetectionUrlAdvancedResponse>> PhishingDetectUrlAdvancedPostWithHttpInfoAsync(AdvancedUrlDetectionRequest body = default(AdvancedUrlDetectionRequest), int operationIndex = 0, System.Threading.CancellationToken cancellationToken = default(global::System.Threading.CancellationToken))
+        {
+
+            Cloudmersive.APIClient.NET.Phishing.Client.RequestOptions localVarRequestOptions = new Cloudmersive.APIClient.NET.Phishing.Client.RequestOptions();
+
+            string[] _contentTypes = new string[] {
+                "application/json", 
+                "text/json", 
+                "application/*+json"
+            };
+
+            // to determine the Accept header
+            string[] _accepts = new string[] {
+                "text/plain",
+                "application/json",
+                "text/json"
+            };
+
+            var localVarContentType = Cloudmersive.APIClient.NET.Phishing.Client.ClientUtils.SelectHeaderContentType(_contentTypes);
+            if (localVarContentType != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Content-Type", localVarContentType);
+            }
+
+            var localVarAccept = Cloudmersive.APIClient.NET.Phishing.Client.ClientUtils.SelectHeaderAccept(_accepts);
+            if (localVarAccept != null)
+            {
+                localVarRequestOptions.HeaderParameters.Add("Accept", localVarAccept);
+            }
+
+            localVarRequestOptions.Data = body;
+
+            localVarRequestOptions.Operation = "PhishingDetectionApi.PhishingDetectUrlAdvancedPost";
+            localVarRequestOptions.OperationIndex = operationIndex;
+
+            // authentication (Apikey) required
+            if (!string.IsNullOrEmpty(this.Configuration.GetApiKeyWithPrefix("Apikey")))
+            {
+                localVarRequestOptions.HeaderParameters.Add("Apikey", this.Configuration.GetApiKeyWithPrefix("Apikey"));
+            }
+
+            // make the HTTP request
+            var localVarResponse = await this.AsynchronousClient.PostAsync<PhishingDetectionUrlAdvancedResponse>("/phishing/detect/url/advanced", localVarRequestOptions, this.Configuration, cancellationToken).ConfigureAwait(false);
+
+            if (this.ExceptionFactory != null)
+            {
+                Exception _exception = this.ExceptionFactory("PhishingDetectUrlAdvancedPost", localVarResponse);
                 if (_exception != null)
                 {
                     throw _exception;

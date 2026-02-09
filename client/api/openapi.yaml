@@ -143,6 +143,41 @@ paths:
       tags:
       - PhishingDetection
       x-codegen-request-body-name: body
+  /phishing/detect/url/advanced:
+    post:
+      requestBody:
+        content:
+          application/json:
+            schema:
+              $ref: '#/components/schemas/AdvancedUrlDetectionRequest'
+          text/json:
+            schema:
+              $ref: '#/components/schemas/AdvancedUrlDetectionRequest'
+          application/*+json:
+            schema:
+              $ref: '#/components/schemas/AdvancedUrlDetectionRequest'
+        description: URL phishing detection request
+        required: false
+      responses:
+        "200":
+          content:
+            text/plain:
+              schema:
+                $ref: '#/components/schemas/PhishingDetectionUrlAdvancedResponse'
+            application/json:
+              schema:
+                $ref: '#/components/schemas/PhishingDetectionUrlAdvancedResponse'
+            text/json:
+              schema:
+                $ref: '#/components/schemas/PhishingDetectionUrlAdvancedResponse'
+          description: OK
+      summary: "Perform advanced AI phishing detection and classification against\
+        \ an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes\
+        \ the page with AI deep learning to detect phishing and other unsafe content.\
+        \  Uses 100-125 API calls."
+      tags:
+      - PhishingDetection
+      x-codegen-request-body-name: body
 components:
   schemas:
     AdvancedEmailDetectionRequest:
@@ -177,8 +212,20 @@ components:
             \ entities, false otherwise (default)"
           type: boolean
         InputEmailFile:
+          description: "Optional: Input email file bytes (EML, PDF, etc.).  If not\
+            \ provided, HtmlBody will be used instead."
           format: byte
           pattern: "^(?:[A-Za-z0-9+/]{4})*(?:[A-Za-z0-9+/]{2}==|[A-Za-z0-9+/]{3}=)?$"
+          type: string
+      type: object
+    AdvancedUrlDetectionRequest:
+      additionalProperties: false
+      description: Request to detect phishing from a URL
+      example:
+        Url: Url
+      properties:
+        Url:
+          description: URL to check for phishing
           type: string
       type: object
     PhishingDetectionAdvancedRequest:
@@ -276,6 +323,45 @@ components:
         CleanResult:
           description: "True if the result is not phishing (clean), and false otherwise"
           type: boolean
+      type: object
+    PhishingDetectionUrlAdvancedResponse:
+      additionalProperties: false
+      description: Result of detecting phishing from a URL using AI
+      example:
+        PhishingRiskLevel: 0.8008281904610115
+        IsSsrfThreat: true
+        ContainsUnsolicitedSales: true
+        ContainsPhishingAttempt: true
+        ContainsPhishing: true
+        AnalysisRationale: AnalysisRationale
+        CleanResult: true
+        ContainsPromotionalContent: true
+      properties:
+        CleanResult:
+          description: "True if the result is not phishing (clean), and false otherwise"
+          type: boolean
+        PhishingRiskLevel:
+          description: Overall phishing risk level between 0.0 and 1.0
+          format: double
+          type: number
+        IsSsrfThreat:
+          description: True if the URL is an SSRF threat
+          type: boolean
+        ContainsPhishing:
+          description: "True if the URL contains phishing threat risks, false otherwise"
+          type: boolean
+        ContainsUnsolicitedSales:
+          description: "True if the URL contains unsolicited sales, false otherwise"
+          type: boolean
+        ContainsPromotionalContent:
+          description: "True if the URL contains promotional content, false otherwise"
+          type: boolean
+        ContainsPhishingAttempt:
+          description: "True if the URL contains a phishing attempt, false otherwise"
+          type: boolean
+        AnalysisRationale:
+          description: Rationale for why the conclusion was formed
+          type: string
       type: object
     _phishing_detect_file_post_request:
       properties:

@@ -40,7 +40,7 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
         /// <param name="htmlBody">Body of the email in HTML, or text.</param>
         /// <param name="allowLowReputationSenders">Allow email from low reputation senders and domains.</param>
         /// <param name="allowSanctioned">True to allow sanctioned countries and certain known sanctioned entities, false otherwise (default).</param>
-        /// <param name="inputEmailFile">inputEmailFile.</param>
+        /// <param name="inputEmailFile">Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead..</param>
         public AdvancedEmailDetectionRequest(string fromEmailAddress = default(string), string toEmailAddress = default(string), string subject = default(string), string htmlBody = default(string), bool allowLowReputationSenders = default(bool), bool allowSanctioned = default(bool), byte[] inputEmailFile = default(byte[]))
         {
             this.FromEmailAddress = fromEmailAddress;
@@ -95,8 +95,9 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
         public bool AllowSanctioned { get; set; }
 
         /// <summary>
-        /// Gets or Sets InputEmailFile
+        /// Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead.
         /// </summary>
+        /// <value>Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead.</value>
         [DataMember(Name = "InputEmailFile", EmitDefaultValue = false)]
         public byte[] InputEmailFile { get; set; }
 
