@@ -40,8 +40,9 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
         /// <param name="htmlBody">Body of the email in HTML, or text.</param>
         /// <param name="allowLowReputationSenders">Allow email from low reputation senders and domains.</param>
         /// <param name="allowSanctioned">True to allow sanctioned countries and certain known sanctioned entities, false otherwise (default).</param>
+        /// <param name="customPolicyID">Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud.</param>
         /// <param name="inputEmailFile">Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead..</param>
-        public AdvancedEmailDetectionRequest(string fromEmailAddress = default(string), string toEmailAddress = default(string), string subject = default(string), string htmlBody = default(string), bool allowLowReputationSenders = default(bool), bool allowSanctioned = default(bool), byte[] inputEmailFile = default(byte[]))
+        public AdvancedEmailDetectionRequest(string fromEmailAddress = default(string), string toEmailAddress = default(string), string subject = default(string), string htmlBody = default(string), bool allowLowReputationSenders = default(bool), bool allowSanctioned = default(bool), string customPolicyID = default(string), byte[] inputEmailFile = default(byte[]))
         {
             this.FromEmailAddress = fromEmailAddress;
             this.ToEmailAddress = toEmailAddress;
@@ -49,6 +50,7 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
             this.HtmlBody = htmlBody;
             this.AllowLowReputationSenders = allowLowReputationSenders;
             this.AllowSanctioned = allowSanctioned;
+            this.CustomPolicyID = customPolicyID;
             this.InputEmailFile = inputEmailFile;
         }
 
@@ -95,6 +97,13 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
         public bool AllowSanctioned { get; set; }
 
         /// <summary>
+        /// Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud
+        /// </summary>
+        /// <value>Apply a Custom Policy for Phishing Enforcement by providing the ID; to create a Custom Policy,  navigate to the Cloudmersive Management Portal and select Custom Policies.  Requires Managed Instance or Private Cloud</value>
+        [DataMember(Name = "CustomPolicyID", EmitDefaultValue = false)]
+        public string CustomPolicyID { get; set; }
+
+        /// <summary>
         /// Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead.
         /// </summary>
         /// <value>Optional: Input email file bytes (EML, PDF, etc.).  If not provided, HtmlBody will be used instead.</value>
@@ -115,6 +124,7 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
             sb.Append("  HtmlBody: ").Append(HtmlBody).Append("\n");
             sb.Append("  AllowLowReputationSenders: ").Append(AllowLowReputationSenders).Append("\n");
             sb.Append("  AllowSanctioned: ").Append(AllowSanctioned).Append("\n");
+            sb.Append("  CustomPolicyID: ").Append(CustomPolicyID).Append("\n");
             sb.Append("  InputEmailFile: ").Append(InputEmailFile).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

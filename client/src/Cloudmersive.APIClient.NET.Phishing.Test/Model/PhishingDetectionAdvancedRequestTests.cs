@@ -71,5 +71,86 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         {
             // TODO unit test for the property 'Model'
         }
+
+        /// <summary>
+        /// Test the property 'CustomPolicyID'
+        /// </summary>
+        [Fact]
+        public void CustomPolicyIDTest()
+        {
+            // TODO unit test for the property 'CustomPolicyID'
+        }
+
+        /// <summary>
+        /// Test the property 'ProvideAnalysisRationale'
+        /// </summary>
+        [Fact]
+        public void ProvideAnalysisRationaleTest()
+        {
+            // TODO unit test for the property 'ProvideAnalysisRationale'
+        }
+
+        /// <summary>
+        /// Test the property 'TextType'
+        /// </summary>
+        [Fact]
+        public void TextTypeTest()
+        {
+            // TODO unit test for the property 'TextType'
+        }
+
+        /// <summary>
+        /// Test the property 'FromName'
+        /// </summary>
+        [Fact]
+        public void FromNameTest()
+        {
+            // TODO unit test for the property 'FromName'
+        }
+
+        /// <summary>
+        /// Test the property 'ToName'
+        /// </summary>
+        [Fact]
+        public void ToNameTest()
+        {
+            // TODO unit test for the property 'ToName'
+        }
+
+        /// <summary>
+        /// Test the property 'FromPhoneNumber'
+        /// </summary>
+        [Fact]
+        public void FromPhoneNumberTest()
+        {
+            // TODO unit test for the property 'FromPhoneNumber'
+        }
+
+        /// <summary>
+        /// Test the property 'ToPhoneNumber'
+        /// </summary>
+        [Fact]
+        public void ToPhoneNumberTest()
+        {
+            // TODO unit test for the property 'ToPhoneNumber'
+        }
+
+        /// <summary>
+        /// Test the property 'FromEmailAddress'
+        /// </summary>
+        [Fact]
+        public void FromEmailAddressTest()
+        {
+            // TODO unit test for the property 'FromEmailAddress'
+        }
+
+        /// <summary>
+        /// Test the property 'ToEmailAddress'
+        /// </summary>
+        [Fact]
+        public void ToEmailAddressTest()
+        {
+            // TODO unit test for the property 'ToEmailAddress'
+        }
     }
 }

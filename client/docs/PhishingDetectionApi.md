@@ -106,7 +106,7 @@ catch (ApiException e)
 
 <a id="phishingdetectfileadvancedpost"></a>
 # **PhishingDetectFileAdvancedPost**
-> PhishingDetectionAdvancedResponse PhishingDetectFileAdvancedPost (string model = null, System.IO.Stream inputFile = null)
+> PhishingDetectionAdvancedResponse PhishingDetectFileAdvancedPost (string model = null, string customPolicyId = null, System.IO.Stream inputFile = null)
 
 Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
@@ -133,12 +133,13 @@ namespace Example
 
             var apiInstance = new PhishingDetectionApi(config);
             var model = "\"Advanced\"";  // string |  (optional)  (default to "Advanced")
+            var customPolicyId = "customPolicyId_example";  // string |  (optional) 
             var inputFile = new System.IO.MemoryStream(System.IO.File.ReadAllBytes("/path/to/file.txt"));  // System.IO.Stream |  (optional) 
 
             try
             {
                 // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-                PhishingDetectionAdvancedResponse result = apiInstance.PhishingDetectFileAdvancedPost(model, inputFile);
+                PhishingDetectionAdvancedResponse result = apiInstance.PhishingDetectFileAdvancedPost(model, customPolicyId, inputFile);
                 Debug.WriteLine(result);
             }
             catch (ApiException  e)
@@ -159,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 try
 {
     // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
-    ApiResponse<PhishingDetectionAdvancedResponse> response = apiInstance.PhishingDetectFileAdvancedPostWithHttpInfo(model, inputFile);
+    ApiResponse<PhishingDetectionAdvancedResponse> response = apiInstance.PhishingDetectFileAdvancedPostWithHttpInfo(model, customPolicyId, inputFile);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
     Debug.Write("Response Body: " + response.Data);
@@ -177,6 +178,7 @@ catch (ApiException e)
 | Name | Type | Description | Notes |
 |------|------|-------------|-------|
 | **model** | **string** |  | [optional] [default to &quot;Advanced&quot;] |
+| **customPolicyId** | **string** |  | [optional]  |
 | **inputFile** | **System.IO.Stream****System.IO.Stream** |  | [optional]  |
 
 ### Return type

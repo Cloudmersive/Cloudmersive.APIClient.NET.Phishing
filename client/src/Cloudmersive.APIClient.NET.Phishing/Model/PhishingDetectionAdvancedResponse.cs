@@ -36,11 +36,13 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
         /// </summary>
         /// <param name="cleanResult">True if the result is not phishing (clean), and false otherwise.</param>
         /// <param name="phishingRiskLevel">Overall phishing risk level between 0.0 and 1.0.</param>
+        /// <param name="confidenceLevel">Confidence level between 0.0 and 1.0 where values over 0.9 indicate high confidence.</param>
         /// <param name="analysisRationale">Rationale for why the conclusion was formed.</param>
-        public PhishingDetectionAdvancedResponse(bool cleanResult = default(bool), double phishingRiskLevel = default(double), string analysisRationale = default(string))
+        public PhishingDetectionAdvancedResponse(bool cleanResult = default(bool), double phishingRiskLevel = default(double), double confidenceLevel = default(double), string analysisRationale = default(string))
         {
             this.CleanResult = cleanResult;
             this.PhishingRiskLevel = phishingRiskLevel;
+            this.ConfidenceLevel = confidenceLevel;
             this.AnalysisRationale = analysisRationale;
         }
 
@@ -59,6 +61,13 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
         public double PhishingRiskLevel { get; set; }
 
         /// <summary>
+        /// Confidence level between 0.0 and 1.0 where values over 0.9 indicate high confidence
+        /// </summary>
+        /// <value>Confidence level between 0.0 and 1.0 where values over 0.9 indicate high confidence</value>
+        [DataMember(Name = "ConfidenceLevel", EmitDefaultValue = false)]
+        public double ConfidenceLevel { get; set; }
+
+        /// <summary>
         /// Rationale for why the conclusion was formed
         /// </summary>
         /// <value>Rationale for why the conclusion was formed</value>
@@ -75,6 +84,7 @@ namespace Cloudmersive.APIClient.NET.Phishing.Model
             sb.Append("class PhishingDetectionAdvancedResponse {\n");
             sb.Append("  CleanResult: ").Append(CleanResult).Append("\n");
             sb.Append("  PhishingRiskLevel: ").Append(PhishingRiskLevel).Append("\n");
+            sb.Append("  ConfidenceLevel: ").Append(ConfidenceLevel).Append("\n");
             sb.Append("  AnalysisRationale: ").Append(AnalysisRationale).Append("\n");
             sb.Append("}\n");
             return sb.ToString();

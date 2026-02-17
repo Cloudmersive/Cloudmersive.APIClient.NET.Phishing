@@ -84,6 +84,10 @@ paths:
         schema:
           default: Advanced
           type: string
+      - in: header
+        name: customPolicyId
+        schema:
+          type: string
       requestBody:
         content:
           multipart/form-data:
@@ -187,6 +191,7 @@ components:
         FromEmailAddress: FromEmailAddress
         InputEmailFile: InputEmailFile
         HtmlBody: HtmlBody
+        CustomPolicyID: CustomPolicyID
         AllowSanctioned: true
         Subject: Subject
         AllowLowReputationSenders: true
@@ -211,6 +216,12 @@ components:
           description: "True to allow sanctioned countries and certain known sanctioned\
             \ entities, false otherwise (default)"
           type: boolean
+        CustomPolicyID:
+          description: "Apply a Custom Policy for Phishing Enforcement by providing\
+            \ the ID; to create a Custom Policy,\r\nnavigate to the Cloudmersive Management\
+            \ Portal and select Custom Policies.\r\nRequires Managed Instance or Private\
+            \ Cloud"
+          type: string
         InputEmailFile:
           description: "Optional: Input email file bytes (EML, PDF, etc.).  If not\
             \ provided, HtmlBody will be used instead."
@@ -222,18 +233,34 @@ components:
       additionalProperties: false
       description: Request to detect phishing from a URL
       example:
+        CustomPolicyID: CustomPolicyID
         Url: Url
       properties:
         Url:
           description: URL to check for phishing
+          type: string
+        CustomPolicyID:
+          description: "Apply a Custom Policy for Phishing Enforcement by providing\
+            \ the ID; to create a Custom Policy,\r\nnavigate to the Cloudmersive Management\
+            \ Portal and select Custom Policies.\r\nRequires Managed Instance or Private\
+            \ Cloud"
           type: string
       type: object
     PhishingDetectionAdvancedRequest:
       additionalProperties: false
       description: AI advanced phishing detection request
       example:
+        FromEmailAddress: FromEmailAddress
+        FromName: FromName
+        CustomPolicyID: CustomPolicyID
         InputString: InputString
         Model: Model
+        ProvideAnalysisRationale: true
+        FromPhoneNumber: FromPhoneNumber
+        ToName: ToName
+        TextType: TextType
+        ToPhoneNumber: ToPhoneNumber
+        ToEmailAddress: ToEmailAddress
       properties:
         InputString:
           description: Input text string to detect phishing against
@@ -242,12 +269,47 @@ components:
           description: "Optional: Specify which AI model to use.  Possible choices\
             \ are Normal and Advanced.  Default is Advanced."
           type: string
+        CustomPolicyID:
+          description: "Apply a Custom Policy for Phishing Enforcement by providing\
+            \ the ID; to create a Custom Policy,\r\nnavigate to the Cloudmersive Management\
+            \ Portal and select Custom Policies.\r\nRequires Managed Instance or Private\
+            \ Cloud"
+          type: string
+        ProvideAnalysisRationale:
+          description: "Optional: Set to true to include an analysis rationale in\
+            \ the response explaining why the content was or was not flagged.  Default\
+            \ is true."
+          type: boolean
+        TextType:
+          description: "Optional: Type of text being analyzed. Must be one of: \"\
+            Text Message\", \"User Message\", \"Sales Lead\", \"Email Message\", \"\
+            Support Case\", \"Other\"."
+          type: string
+        FromName:
+          description: "Optional: Name of the sender"
+          type: string
+        ToName:
+          description: "Optional: Name of the recipient"
+          type: string
+        FromPhoneNumber:
+          description: "Optional: Phone number of the sender"
+          type: string
+        ToPhoneNumber:
+          description: "Optional: Phone number of the recipient"
+          type: string
+        FromEmailAddress:
+          description: "Optional: Email address of the sender"
+          type: string
+        ToEmailAddress:
+          description: "Optional: Email address of the recipient"
+          type: string
       type: object
     PhishingDetectionAdvancedResponse:
       additionalProperties: false
       description: Result of detecting phishing using AI
       example:
         PhishingRiskLevel: 0.8008281904610115
+        ConfidenceLevel: 6.027456183070403
         AnalysisRationale: AnalysisRationale
         CleanResult: true
       properties:
@@ -256,6 +318,11 @@ components:
           type: boolean
         PhishingRiskLevel:
           description: Overall phishing risk level between 0.0 and 1.0
+          format: double
+          type: number
+        ConfidenceLevel:
+          description: Confidence level between 0.0 and 1.0 where values over 0.9
+            indicate high confidence
           format: double
           type: number
         AnalysisRationale:

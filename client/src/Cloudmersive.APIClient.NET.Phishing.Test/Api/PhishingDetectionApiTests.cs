@@ -74,8 +74,9 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Api
         {
             // TODO uncomment below to test the method and replace null with proper value
             //string model = null;
+            //string customPolicyId = null;
             //System.IO.Stream inputFile = null;
-            //var response = instance.PhishingDetectFileAdvancedPost(model, inputFile);
+            //var response = instance.PhishingDetectFileAdvancedPost(model, customPolicyId, inputFile);
             //Assert.IsType<PhishingDetectionAdvancedResponse>(response);
         }
 

@@ -73,6 +73,15 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'ConfidenceLevel'
+        /// </summary>
+        [Fact]
+        public void ConfidenceLevelTest()
+        {
+            // TODO unit test for the property 'ConfidenceLevel'
+        }
+
+        /// <summary>
         /// Test the property 'AnalysisRationale'
         /// </summary>
         [Fact]
