@@ -64,12 +64,75 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         }
 
         /// <summary>
+        /// Test the property 'TextType'
+        /// </summary>
+        [Fact]
+        public void TextTypeTest()
+        {
+            // TODO unit test for the property 'TextType'
+        }
+
+        /// <summary>
         /// Test the property 'Model'
         /// </summary>
         [Fact]
         public void ModelTest()
         {
             // TODO unit test for the property 'Model'
+        }
+
+        /// <summary>
+        /// Test the property 'AllowUnsolicitedSales'
+        /// </summary>
+        [Fact]
+        public void AllowUnsolicitedSalesTest()
+        {
+            // TODO unit test for the property 'AllowUnsolicitedSales'
+        }
+
+        /// <summary>
+        /// Test the property 'AllowPromotionalContent'
+        /// </summary>
+        [Fact]
+        public void AllowPromotionalContentTest()
+        {
+            // TODO unit test for the property 'AllowPromotionalContent'
+        }
+
+        /// <summary>
+        /// Test the property 'AllowWebUrls'
+        /// </summary>
+        [Fact]
+        public void AllowWebUrlsTest()
+        {
+            // TODO unit test for the property 'AllowWebUrls'
+        }
+
+        /// <summary>
+        /// Test the property 'AllowPhoneNumbers'
+        /// </summary>
+        [Fact]
+        public void AllowPhoneNumbersTest()
+        {
+            // TODO unit test for the property 'AllowPhoneNumbers'
+        }
+
+        /// <summary>
+        /// Test the property 'AllowEmailAddresses'
+        /// </summary>
+        [Fact]
+        public void AllowEmailAddressesTest()
+        {
+            // TODO unit test for the property 'AllowEmailAddresses'
+        }
+
+        /// <summary>
+        /// Test the property 'ProvideUrlAnalysis'
+        /// </summary>
+        [Fact]
+        public void ProvideUrlAnalysisTest()
+        {
+            // TODO unit test for the property 'ProvideUrlAnalysis'
         }
 
         /// <summary>
@@ -88,15 +151,6 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         public void ProvideAnalysisRationaleTest()
         {
             // TODO unit test for the property 'ProvideAnalysisRationale'
-        }
-
-        /// <summary>
-        /// Test the property 'TextType'
-        /// </summary>
-        [Fact]
-        public void TextTypeTest()
-        {
-            // TODO unit test for the property 'TextType'
         }
 
         /// <summary>

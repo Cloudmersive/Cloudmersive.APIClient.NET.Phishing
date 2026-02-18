@@ -106,6 +106,18 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Api
         }
 
         /// <summary>
+        /// Test PhishingDetectTextStringPost
+        /// </summary>
+        [Fact]
+        public void PhishingDetectTextStringPostTest()
+        {
+            // TODO uncomment below to test the method and replace null with proper value
+            //PhishingDetectionTextStringRequest body = null;
+            //var response = instance.PhishingDetectTextStringPost(body);
+            //Assert.IsType<PhishingDetectionTextStringResponse>(response);
+        }
+
+        /// <summary>
         /// Test PhishingDetectUrlAdvancedPost
         /// </summary>
         [Fact]

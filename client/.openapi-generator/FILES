@@ -11,7 +11,10 @@ docs/PhishingDetectionAdvancedResponse.md
 docs/PhishingDetectionApi.md
 docs/PhishingDetectionEmailAdvancedResponse.md
 docs/PhishingDetectionResponse.md
+docs/PhishingDetectionTextStringRequest.md
+docs/PhishingDetectionTextStringResponse.md
 docs/PhishingDetectionUrlAdvancedResponse.md
+docs/UnsafeUrlResult.md
 git_push.sh
 src/Cloudmersive.APIClient.NET.Phishing.Test/Api/PhishingDetectionApiTests.cs
 src/Cloudmersive.APIClient.NET.Phishing.Test/Cloudmersive.APIClient.NET.Phishing.Test.csproj
@@ -21,7 +24,10 @@ src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionAdvancedRequ
 src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionAdvancedResponseTests.cs
 src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionEmailAdvancedResponseTests.cs
 src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionResponseTests.cs
+src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionTextStringRequestTests.cs
+src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionTextStringResponseTests.cs
 src/Cloudmersive.APIClient.NET.Phishing.Test/Model/PhishingDetectionUrlAdvancedResponseTests.cs
+src/Cloudmersive.APIClient.NET.Phishing.Test/Model/UnsafeUrlResultTests.cs
 src/Cloudmersive.APIClient.NET.Phishing/Api/PhishingDetectionApi.cs
 src/Cloudmersive.APIClient.NET.Phishing/Client/ApiClient.cs
 src/Cloudmersive.APIClient.NET.Phishing/Client/ApiException.cs
@@ -47,4 +53,7 @@ src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionAdvancedRequest.c
 src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionAdvancedResponse.cs
 src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionEmailAdvancedResponse.cs
 src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionResponse.cs
+src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionTextStringRequest.cs
+src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionTextStringResponse.cs
 src/Cloudmersive.APIClient.NET.Phishing/Model/PhishingDetectionUrlAdvancedResponse.cs
+src/Cloudmersive.APIClient.NET.Phishing/Model/UnsafeUrlResult.cs

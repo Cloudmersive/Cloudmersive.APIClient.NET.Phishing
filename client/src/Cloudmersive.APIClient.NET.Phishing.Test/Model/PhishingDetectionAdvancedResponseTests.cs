@@ -64,12 +64,57 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         }
 
         /// <summary>
-        /// Test the property 'PhishingRiskLevel'
+        /// Test the property 'ContainsPhishing'
         /// </summary>
         [Fact]
-        public void PhishingRiskLevelTest()
+        public void ContainsPhishingTest()
         {
-            // TODO unit test for the property 'PhishingRiskLevel'
+            // TODO unit test for the property 'ContainsPhishing'
+        }
+
+        /// <summary>
+        /// Test the property 'ContainsUnsolicitedSales'
+        /// </summary>
+        [Fact]
+        public void ContainsUnsolicitedSalesTest()
+        {
+            // TODO unit test for the property 'ContainsUnsolicitedSales'
+        }
+
+        /// <summary>
+        /// Test the property 'ContainsPromotionalContent'
+        /// </summary>
+        [Fact]
+        public void ContainsPromotionalContentTest()
+        {
+            // TODO unit test for the property 'ContainsPromotionalContent'
+        }
+
+        /// <summary>
+        /// Test the property 'ContainsWebUrls'
+        /// </summary>
+        [Fact]
+        public void ContainsWebUrlsTest()
+        {
+            // TODO unit test for the property 'ContainsWebUrls'
+        }
+
+        /// <summary>
+        /// Test the property 'ContainsPhoneNumbers'
+        /// </summary>
+        [Fact]
+        public void ContainsPhoneNumbersTest()
+        {
+            // TODO unit test for the property 'ContainsPhoneNumbers'
+        }
+
+        /// <summary>
+        /// Test the property 'ContainsEmailAddresses'
+        /// </summary>
+        [Fact]
+        public void ContainsEmailAddressesTest()
+        {
+            // TODO unit test for the property 'ContainsEmailAddresses'
         }
 
         /// <summary>
@@ -88,6 +133,15 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         public void AnalysisRationaleTest()
         {
             // TODO unit test for the property 'AnalysisRationale'
+        }
+
+        /// <summary>
+        /// Test the property 'UnsafeUrls'
+        /// </summary>
+        [Fact]
+        public void UnsafeUrlsTest()
+        {
+            // TODO unit test for the property 'UnsafeUrls'
         }
     }
 }

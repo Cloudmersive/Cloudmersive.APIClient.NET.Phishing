@@ -8,6 +8,7 @@ All URIs are relative to *http://localhost*
 | [**PhishingDetectFileAdvancedPost**](PhishingDetectionApi.md#phishingdetectfileadvancedpost) | **POST** /phishing/detect/file/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
 | [**PhishingDetectFilePost**](PhishingDetectionApi.md#phishingdetectfilepost) | **POST** /phishing/detect/file | Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. |
 | [**PhishingDetectTextStringAdvancedPost**](PhishingDetectionApi.md#phishingdetecttextstringadvancedpost) | **POST** /phishing/detect/text-string/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
+| [**PhishingDetectTextStringPost**](PhishingDetectionApi.md#phishingdetecttextstringpost) | **POST** /phishing/detect/text-string | Perform AI phishing detection against input text string.  Returns a clean/not-clean result with confidence level and optional rationale. |
 | [**PhishingDetectUrlAdvancedPost**](PhishingDetectionApi.md#phishingdetecturladvancedpost) | **POST** /phishing/detect/url/advanced | Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls. |
 
 <a id="phishingdetectemailadvancedpost"></a>
@@ -374,6 +375,100 @@ catch (ApiException e)
 ### Return type
 
 [**PhishingDetectionAdvancedResponse**](PhishingDetectionAdvancedResponse.md)
+
+### Authorization
+
+[Apikey](../README.md#Apikey)
+
+### HTTP request headers
+
+ - **Content-Type**: application/json, text/json, application/*+json
+ - **Accept**: text/plain, application/json, text/json
+
+
+### HTTP response details
+| Status code | Description | Response headers |
+|-------------|-------------|------------------|
+| **200** | OK |  -  |
+
+[[Back to top]](#) [[Back to API list]](../README.md#documentation-for-api-endpoints) [[Back to Model list]](../README.md#documentation-for-models) [[Back to README]](../README.md)
+
+<a id="phishingdetecttextstringpost"></a>
+# **PhishingDetectTextStringPost**
+> PhishingDetectionTextStringResponse PhishingDetectTextStringPost (PhishingDetectionTextStringRequest body = null)
+
+Perform AI phishing detection against input text string.  Returns a clean/not-clean result with confidence level and optional rationale.
+
+### Example
+```csharp
+using System.Collections.Generic;
+using System.Diagnostics;
+using Cloudmersive.APIClient.NET.Phishing.Api;
+using Cloudmersive.APIClient.NET.Phishing.Client;
+using Cloudmersive.APIClient.NET.Phishing.Model;
+
+namespace Example
+{
+    public class PhishingDetectTextStringPostExample
+    {
+        public static void Main()
+        {
+            Configuration config = new Configuration();
+            config.BasePath = "http://localhost";
+            // Configure API key authorization: Apikey
+            config.AddApiKey("Apikey", "YOUR_API_KEY");
+            // Uncomment below to setup prefix (e.g. Bearer) for API key, if needed
+            // config.AddApiKeyPrefix("Apikey", "Bearer");
+
+            var apiInstance = new PhishingDetectionApi(config);
+            var body = new PhishingDetectionTextStringRequest(); // PhishingDetectionTextStringRequest | Phishing detection request (optional) 
+
+            try
+            {
+                // Perform AI phishing detection against input text string.  Returns a clean/not-clean result with confidence level and optional rationale.
+                PhishingDetectionTextStringResponse result = apiInstance.PhishingDetectTextStringPost(body);
+                Debug.WriteLine(result);
+            }
+            catch (ApiException  e)
+            {
+                Debug.Print("Exception when calling PhishingDetectionApi.PhishingDetectTextStringPost: " + e.Message);
+                Debug.Print("Status Code: " + e.ErrorCode);
+                Debug.Print(e.StackTrace);
+            }
+        }
+    }
+}
+```
+
+#### Using the PhishingDetectTextStringPostWithHttpInfo variant
+This returns an ApiResponse object which contains the response data, status code and headers.
+
+```csharp
+try
+{
+    // Perform AI phishing detection against input text string.  Returns a clean/not-clean result with confidence level and optional rationale.
+    ApiResponse<PhishingDetectionTextStringResponse> response = apiInstance.PhishingDetectTextStringPostWithHttpInfo(body);
+    Debug.Write("Status Code: " + response.StatusCode);
+    Debug.Write("Response Headers: " + response.Headers);
+    Debug.Write("Response Body: " + response.Data);
+}
+catch (ApiException e)
+{
+    Debug.Print("Exception when calling PhishingDetectionApi.PhishingDetectTextStringPostWithHttpInfo: " + e.Message);
+    Debug.Print("Status Code: " + e.ErrorCode);
+    Debug.Print(e.StackTrace);
+}
+```
+
+### Parameters
+
+| Name | Type | Description | Notes |
+|------|------|-------------|-------|
+| **body** | [**PhishingDetectionTextStringRequest**](PhishingDetectionTextStringRequest.md) | Phishing detection request | [optional]  |
+
+### Return type
+
+[**PhishingDetectionTextStringResponse**](PhishingDetectionTextStringResponse.md)
 
 ### Authorization
 
