@@ -35,10 +35,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PhishingDetectionResponse'
           description: OK
-      summary: Perform AI phishing detection and classification on an input image
-        or document (PDF or DOCX).  Analyzes input content as well as embedded URLs
-        with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125
-        API calls depending on model selected.
+      summary: "Perform AI phishing detection and classification on an input image\
+        \ or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG,\
+        \ JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep\
+        \ learning to detect phishing and other unsafe content.  Uses 100-125 API\
+        \ calls depending on model selected."
       tags:
       - PhishingDetection
   /phishing/detect/text-string:
@@ -104,7 +105,7 @@ paths:
           description: OK
       summary: "Perform advanced AI phishing detection and classification against\
         \ input text string.  Analyzes input content as well as embedded URLs with\
-        \ AI deep learnign to detect spam, phishing and other unsafe content.  Uses\
+        \ AI deep learning to detect spam, phishing and other unsafe content.  Uses\
         \ 25-100 API calls depending on model selected."
       tags:
       - PhishingDetection
@@ -139,10 +140,11 @@ paths:
               schema:
                 $ref: '#/components/schemas/PhishingDetectionAdvancedResponse'
           description: OK
-      summary: "Perform advanced AI phishing detection and classification against\
-        \ input text string.  Analyzes input content as well as embedded URLs with\
-        \ AI deep learning to detect phishing, phishing and other unsafe content.\
-        \  Uses 25-100 API calls depending on model selected."
+      summary: "Perform advanced AI phishing detection and classification on an input\
+        \ image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG,\
+        \ PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI\
+        \ deep learning to detect phishing, phishing and other unsafe content.  Uses\
+        \ 25-100 API calls depending on model selected."
       tags:
       - PhishingDetection
   /phishing/detect/email/advanced:
@@ -174,9 +176,11 @@ paths:
                 $ref: '#/components/schemas/PhishingDetectionEmailAdvancedResponse'
           description: OK
       summary: "Perform advanced AI phishing detection and classification against\
-        \ input email.  Analyzes input email as well as embedded URLs with AI deep\
-        \ learning to detect phishing, phishing and other unsafe content.  Uses 25-100\
-        \ API calls depending on model selected."
+        \ input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX,\
+        \ PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes\
+        \ input email as well as embedded URLs with AI deep learning to detect phishing,\
+        \ phishing and other unsafe content.  Uses 25-100 API calls depending on model\
+        \ selected."
       tags:
       - PhishingDetection
       x-codegen-request-body-name: body
@@ -291,6 +295,23 @@ components:
         ProvideUrlAnalysis: true
         TextType: TextMessage
         ToPhoneNumber: +1-555-987-6543
+        PriorHistory:
+        - FromEmailAddress: john.smith@cloudmersive.com
+          FromName: John Smith
+          InputString: "Hello, how can I help you today?"
+          TrustedParty: true
+          FromPhoneNumber: +1-555-123-4567
+          ToName: Jane Doe
+          ToPhoneNumber: +1-555-987-6543
+          ToEmailAddress: jane.doe@cloudmersive.com
+        - FromEmailAddress: john.smith@cloudmersive.com
+          FromName: John Smith
+          InputString: "Hello, how can I help you today?"
+          TrustedParty: true
+          FromPhoneNumber: +1-555-123-4567
+          ToName: Jane Doe
+          ToPhoneNumber: +1-555-987-6543
+          ToEmailAddress: jane.doe@cloudmersive.com
         FromName: John Smith
         CustomPolicyID: ""
         InputString: "Hello, world!"
@@ -391,6 +412,13 @@ components:
           description: "Optional: Email address of the recipient"
           example: jane.doe@cloudmersive.com
           type: string
+        PriorHistory:
+          description: "Optional: Prior context history (e.g. message history) leading\
+            \ up to the current input string. If provided, the AI will take this history\
+            \ into account as context when evaluating the current input."
+          items:
+            $ref: '#/components/schemas/PriorHistoryItem'
+          type: array
       type: object
     PhishingDetectionAdvancedResponse:
       additionalProperties: false
@@ -603,6 +631,53 @@ components:
         AnalysisRationale:
           description: Rationale for why the conclusion was formed
           type: string
+      type: object
+    PriorHistoryItem:
+      additionalProperties: false
+      description: A single message in the prior conversation history
+      example:
+        FromEmailAddress: john.smith@cloudmersive.com
+        FromName: John Smith
+        InputString: "Hello, how can I help you today?"
+        TrustedParty: true
+        FromPhoneNumber: +1-555-123-4567
+        ToName: Jane Doe
+        ToPhoneNumber: +1-555-987-6543
+        ToEmailAddress: jane.doe@cloudmersive.com
+      properties:
+        InputString:
+          description: The text content of this historical message
+          example: "Hello, how can I help you today?"
+          type: string
+        FromName:
+          description: "Optional: Name of the sender"
+          example: John Smith
+          type: string
+        ToName:
+          description: "Optional: Name of the recipient"
+          example: Jane Doe
+          type: string
+        FromPhoneNumber:
+          description: "Optional: Phone number of the sender"
+          example: +1-555-123-4567
+          type: string
+        ToPhoneNumber:
+          description: "Optional: Phone number of the recipient"
+          example: +1-555-987-6543
+          type: string
+        FromEmailAddress:
+          description: "Optional: Email address of the sender"
+          example: john.smith@cloudmersive.com
+          type: string
+        ToEmailAddress:
+          description: "Optional: Email address of the recipient"
+          example: jane.doe@cloudmersive.com
+          type: string
+        TrustedParty:
+          description: "Optional: True if this message is from a trusted party (such\
+            \ as our own company), false otherwise"
+          example: true
+          type: boolean
       type: object
     UnsafeUrlResult:
       additionalProperties: false

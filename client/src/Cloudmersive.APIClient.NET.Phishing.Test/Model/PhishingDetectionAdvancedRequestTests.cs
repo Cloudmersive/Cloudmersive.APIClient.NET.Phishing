@@ -206,5 +206,14 @@ namespace Cloudmersive.APIClient.NET.Phishing.Test.Model
         {
             // TODO unit test for the property 'ToEmailAddress'
         }
+
+        /// <summary>
+        /// Test the property 'PriorHistory'
+        /// </summary>
+        [Fact]
+        public void PriorHistoryTest()
+        {
+            // TODO unit test for the property 'PriorHistory'
+        }
     }
 }

@@ -4,10 +4,10 @@ All URIs are relative to *http://localhost*
 
 | Method | HTTP request | Description |
 |--------|--------------|-------------|
-| [**PhishingDetectEmailAdvancedPost**](PhishingDetectionApi.md#phishingdetectemailadvancedpost) | **POST** /phishing/detect/email/advanced | Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
-| [**PhishingDetectFileAdvancedPost**](PhishingDetectionApi.md#phishingdetectfileadvancedpost) | **POST** /phishing/detect/file/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
-| [**PhishingDetectFilePost**](PhishingDetectionApi.md#phishingdetectfilepost) | **POST** /phishing/detect/file | Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. |
-| [**PhishingDetectTextStringAdvancedPost**](PhishingDetectionApi.md#phishingdetecttextstringadvancedpost) | **POST** /phishing/detect/text-string/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
+| [**PhishingDetectEmailAdvancedPost**](PhishingDetectionApi.md#phishingdetectemailadvancedpost) | **POST** /phishing/detect/email/advanced | Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
+| [**PhishingDetectFileAdvancedPost**](PhishingDetectionApi.md#phishingdetectfileadvancedpost) | **POST** /phishing/detect/file/advanced | Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
+| [**PhishingDetectFilePost**](PhishingDetectionApi.md#phishingdetectfilepost) | **POST** /phishing/detect/file | Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected. |
+| [**PhishingDetectTextStringAdvancedPost**](PhishingDetectionApi.md#phishingdetecttextstringadvancedpost) | **POST** /phishing/detect/text-string/advanced | Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected. |
 | [**PhishingDetectTextStringPost**](PhishingDetectionApi.md#phishingdetecttextstringpost) | **POST** /phishing/detect/text-string | Perform AI phishing detection against input text string.  Returns a clean/not-clean result with confidence level and optional rationale. |
 | [**PhishingDetectUrlAdvancedPost**](PhishingDetectionApi.md#phishingdetecturladvancedpost) | **POST** /phishing/detect/url/advanced | Perform advanced AI phishing detection and classification against an input URL.  Retrieves the URL content, checks for SSRF threats, and analyzes the page with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls. |
 
@@ -15,7 +15,7 @@ All URIs are relative to *http://localhost*
 # **PhishingDetectEmailAdvancedPost**
 > PhishingDetectionEmailAdvancedResponse PhishingDetectEmailAdvancedPost (AdvancedEmailDetectionRequest body = null)
 
-Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -43,7 +43,7 @@ namespace Example
 
             try
             {
-                // Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+                // Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
                 PhishingDetectionEmailAdvancedResponse result = apiInstance.PhishingDetectEmailAdvancedPost(body);
                 Debug.WriteLine(result);
             }
@@ -64,7 +64,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Perform advanced AI phishing detection and classification against input email.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    // Perform advanced AI phishing detection and classification against input email.  Supports email input as a file (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP) or as an HTML body string.  Analyzes input email as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     ApiResponse<PhishingDetectionEmailAdvancedResponse> response = apiInstance.PhishingDetectEmailAdvancedPostWithHttpInfo(body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -109,7 +109,7 @@ catch (ApiException e)
 # **PhishingDetectFileAdvancedPost**
 > PhishingDetectionAdvancedResponse PhishingDetectFileAdvancedPost (string model = null, string customPolicyId = null, System.IO.Stream inputFile = null)
 
-Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -139,7 +139,7 @@ namespace Example
 
             try
             {
-                // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+                // Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
                 PhishingDetectionAdvancedResponse result = apiInstance.PhishingDetectFileAdvancedPost(model, customPolicyId, inputFile);
                 Debug.WriteLine(result);
             }
@@ -160,7 +160,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    // Perform advanced AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     ApiResponse<PhishingDetectionAdvancedResponse> response = apiInstance.PhishingDetectFileAdvancedPostWithHttpInfo(model, customPolicyId, inputFile);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -207,7 +207,7 @@ catch (ApiException e)
 # **PhishingDetectFilePost**
 > PhishingDetectionResponse PhishingDetectFilePost (string model = null, System.IO.Stream inputFile = null)
 
-Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -236,7 +236,7 @@ namespace Example
 
             try
             {
-                // Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+                // Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
                 PhishingDetectionResponse result = apiInstance.PhishingDetectFilePost(model, inputFile);
                 Debug.WriteLine(result);
             }
@@ -257,7 +257,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Perform AI phishing detection and classification on an input image or document (PDF or DOCX).  Analyzes input content as well as embedded URLs with AI deep learnign to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
+    // Perform AI phishing detection and classification on an input image or document (PDF, DOC, DOCX, XLS, XLSX, PPT, PPTX, HTML, EML, MSG, PNG, JPG, WEBP).  Analyzes input content as well as embedded URLs with AI deep learning to detect phishing and other unsafe content.  Uses 100-125 API calls depending on model selected.
     ApiResponse<PhishingDetectionResponse> response = apiInstance.PhishingDetectFilePostWithHttpInfo(model, inputFile);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
@@ -303,7 +303,7 @@ catch (ApiException e)
 # **PhishingDetectTextStringAdvancedPost**
 > PhishingDetectionAdvancedResponse PhishingDetectTextStringAdvancedPost (PhishingDetectionAdvancedRequest body = null)
 
-Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
 
 ### Example
 ```csharp
@@ -331,7 +331,7 @@ namespace Example
 
             try
             {
-                // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+                // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
                 PhishingDetectionAdvancedResponse result = apiInstance.PhishingDetectTextStringAdvancedPost(body);
                 Debug.WriteLine(result);
             }
@@ -352,7 +352,7 @@ This returns an ApiResponse object which contains the response data, status code
 ```csharp
 try
 {
-    // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learnign to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
+    // Perform advanced AI phishing detection and classification against input text string.  Analyzes input content as well as embedded URLs with AI deep learning to detect spam, phishing and other unsafe content.  Uses 25-100 API calls depending on model selected.
     ApiResponse<PhishingDetectionAdvancedResponse> response = apiInstance.PhishingDetectTextStringAdvancedPostWithHttpInfo(body);
     Debug.Write("Status Code: " + response.StatusCode);
     Debug.Write("Response Headers: " + response.Headers);
